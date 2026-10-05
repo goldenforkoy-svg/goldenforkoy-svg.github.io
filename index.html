@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Golden Fork | Lunch Buffet Helsinki</title>
+
+<meta name="description" content="Golden Fork lunch buffet Helsingissä. Sri Lankan & Asian inspired buffet 14,00 €. Takkatie 7, 00370 Helsinki. Ma–Pe 10:00–15:00.">
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#080808;
+color:white;
+line-height:1.6;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:100;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,190,60,.25);
+}
+
+.nav-inner{
+max-width:1200px;
+margin:auto;
+padding:14px 22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo-text{
+color:#ffd36a;
+font-weight:900;
+font-size:20px;
+letter-spacing:1px;
+}
+
+.nav-links{
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+.lang-btn{
+padding:8px 12px;
+border-radius:20px;
+background:#171717;
+color:white;
+border:1px solid #666;
+cursor:pointer;
+}
+
+.hero{
+min-height:100vh;
+background:
+linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.35)),
+url("golden-fork-hero.jpg") center/cover no-repeat;
+
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:1200px;
+width:100%;
+margin:auto;
+padding:120px 24px 70px;
+}
+
+.tag{
+display:inline-block;
+color:#ffd36a;
+border:1px solid rgba(255,211,106,.5);
+padding:8px 14px;
+border-radius:30px;
+margin-bottom:18px;
+font-size:13px;
+letter-spacing:2px;
+}
+
+h1{
+font-family:Georgia,serif;
+font-size:clamp(60px,10vw,120px);
+line-height:.9;
+margin-bottom:22px;
+}
+
+.hero p{
+max-width:650px;
+font-size:21px;
+color:#eee;
+}
+
+.price{
+font-size:64px;
+color:#ffd36a;
+font-weight:900;
+margin-top:24px;
+}
+
+.price small{
+display:block;
+font-size:15px;
+color:white;
+letter-spacing:2px;
+}
+
+.buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.btn{
+padding:14px 22px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+}
+
+.gold{
+background:linear-gradient(135deg,#ffe08a,#d89c2d);
+color:#15100a;
+}
+
+.dark{
+border:1px solid #777;
+color:white;
+background:rgba(0,0,0,.5);
+}
+
+.info{
+margin-top:22px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.info span{
+background:rgba(0,0,0,.55);
+border:1px solid #444;
+border-radius:30px;
+padding:8px 14px;
+}
+
+section{
+padding:90px 24px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.gold-text{
+color:#e6ae43;
+text-transform:uppercase;
+letter-spacing:3px;
+font-size:13px;
+font-weight:bold;
+}
+
+h2{
+font-family:Georgia,serif;
+font-size:clamp(38px,6vw,68px);
+line-height:1;
+margin:8px 0 25px;
+}
+
+.intro{
+max-width:700px;
+color:#cfc8bb;
+margin-bottom:35px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
+}
+
+.card{
+background:linear-gradient(180deg,#181818,#101010);
+border:1px solid #292929;
+padding:25px;
+border-radius:22px;
+}
+
+.number{
+color:#ffd36a;
+font-size:34px;
+font-weight:900;
+}
+
+.card h3{
+margin:15px 0 8px;
+}
+
+.card p{
+color:#bdb6aa;
+font-size:14px;
+}
+
+.concept{
+background:#101010;
+}
+
+.concept-grid{
+display:grid;
+grid-template-columns:1.3fr .7fr;
+gap:22px;
+}
+
+.story,.price-box{
+border-radius:26px;
+background:linear-gradient(145deg,#171717,#0d0d0d);
+border:1px solid #292929;
+padding:40px;
+}
+
+.story p{
+color:#cfc7b9;
+font-size:18px;
+}
+
+.features{
+margin-top:28px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.feature{
+border:1px solid rgba(255,190,60,.2);
+padding:14px;
+border-radius:15px;
+}
+
+.big-price{
+font-size:80px;
+font-weight:900;
+color:#ffd36a;
+}
+
+.visit-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+}
+
+.contact,.map{
+background:#121212;
+border:1px solid #292929;
+border-radius:26px;
+padding:35px;
+}
+
+.line{
+padding:15px 0;
+border-bottom:1px solid #292929;
+}
+
+.line strong{
+display:block;
+color:#ffd36a;
+}
+
+.map{
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+min-height:380px;
+}
+
+.map a{
+text-decoration:none;
+color:white;
+}
+
+.map-icon{
+font-size:55px;
+}
+
+footer{
+border-top:1px solid #222;
+padding:30px;
+text-align:center;
+color:#999;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr 1fr;
+}
+
+.concept-grid,
+.visit-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.nav-links a{
+display:none;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:58px;
+}
+
+.price{
+font-size:48px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="nav-inner">
+
+<div class="logo-text">
+GOLDEN FORK
+</div>
+
+<div class="nav-links">
+
+<a href="#buffet">Buffet</a>
+
+<a href="#concept">Concept</a>
+
+<a href="#contact">Contact</a>
+
+<a href="tel:+358413264717">
+041 326 4717
+</a>
+
+<button class="lang-btn" onclick="changeLanguage()">
+EN / FI
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="tag">
+LUNCH BUFFET • HELSINKI
+</div>
+
+<h1>
+Golden Fork
+</h1>
+
+<p id="heroText">
+Runsas Sri Lankan & Asian inspired lounasbuffet –
+lämmin, värikäs ja täynnä makua joka arkipäivä.
+</p>
+
+<div class="price">
+
+14,00 €
+
+<small>
+LUNCH BUFFET
+</small>
+
+</div>
+
+
+<div class="buttons">
+
+<a class="btn gold"
+href="https://www.google.com/maps/search/?api=1&query=Takkatie+7+00370+Helsinki"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+<a class="btn dark"
+href="tel:+358413264717">
+
+☎ Call us
+
+</a>
+
+</div>
+
+
+<div class="info">
+
+<span>
+Mon–Fri 10:00–15:00
+</span>
+
+<span>
+Takkatie 7, 00370 Helsinki
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="buffet">
+
+<div class="container">
+
+<div class="gold-text">
+Golden Fork Buffet
+</div>
+
+<h2>
+One price.<br>
+A complete lunch.
+</h2>
+
+<p class="intro" id="buffetIntro">
+
+Golden Fork tarjoaa monipuolisen lounasbuffetin,
+jossa Sri Lankan ja Aasian maut yhdistyvät
+suosittuihin arkilounaan klassikoihin.
+
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<div class="number">
+01
+</div>
+
+<h3>
+Soup of the Day
+</h3>
+
+<p>
+Lämmin keitto aloittaa lounaan.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+6–8
+</div>
+
+<h3>
+Fresh Salads
+</h3>
+
+<p>
+Runsas ja värikäs salaattipöytä.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+03
+</div>
+
+<h3>
+Hot Main Dishes
+</h3>
+
+<p>
+Sri Lankan & Asian inspired pääruokia.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
+02
+</div>
+
+<h3>
+Sides
+</h3>
+
+<p>
+Riisiä, nuudeleita, perunaa ja muita lisukkeita.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="number">
++
+</div>
+
+<h3>
+Dessert & Coffee
+</h3>
+
+<p>
+Jälkiruoka ja kahvi viimeistelevät lounaan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="concept" class="concept">
+
+<div class="container concept-grid">
+
+
+<div class="story">
+
+<div class="gold-text">
+OUR CONCEPT
+</div>
+
+<h2>
+Flavour, variety
+& a proper lunch.
+</h2>
+
+<p id="conceptText">
+
+Golden Fork tuo Pitäjänmäkeen runsaan
+lounasbuffetin, jossa Sri Lankan ja Aasian maut
+kohtaavat pohjoismaisen arkilounaan helppouden.
+
+Tavoite on yksinkertainen:
+hyvä ruoka, monipuolinen valikoima ja reilu hinta.
+
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+✓ Daily changing buffet
+</div>
+
+<div class="feature">
+✓ 6–8 fresh salads
+</div>
+
+<div class="feature">
+✓ 3 hot main dishes
+</div>
+
+<div class="feature">
+✓ Dessert & coffee
+</div>
+
+</div>
+
+</div>
+
+
+<div class="price-box">
+
+<div class="gold-text">
+WEEKDAY LUNCH
+</div>
+
+<h2>
+Everything
+for one price.
+</h2>
+
+<div class="big-price">
+
+14,00 €
+
+</div>
+
+<p>
+Come hungry.<br>
+Leave satisfied.
+</p>
+
+<br>
+
+<a class="btn gold"
+href="tel:+358413264717">
+
+Call 041 326 4717
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="contact">
+
+<div class="container">
+
+<div class="gold-text">
+WELCOME
+</div>
+
+<h2>
+Visit Golden Fork.
+</h2>
+
+
+<div class="visit-grid">
+
+
+<div class="contact">
+
+<div class="line">
+
+<strong>
+ADDRESS
+</strong>
+
+Takkatie 7<br>
+00370 Helsinki
+
+</div>
+
+
+<div class="line">
+
+<strong>
+OPENING HOURS
+</strong>
+
+Monday–Friday<br>
+10:00–15:00
+
+</div>
+
+
+<div class="line">
+
+<strong>
+PHONE
+</strong>
+
+<a href="tel:+358413264717"
+style="color:white">
+
+041 326 4717
+
+</a>
+
+</div>
+
+
+<div class="line">
+
+<strong>
+LUNCH BUFFET
+</strong>
+
+14,00 €
+
+</div>
+
+</div>
+
+
+<div class="map">
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Takkatie+7+00370+Helsinki"
+target="_blank">
+
+<div class="map-icon">
+📍
+</div>
+
+<h2 style="font-size:38px">
+Open Google Maps
+</h2>
+
+<p>
+
+Takkatie 7<br>
+00370 Helsinki
+
+</p>
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+© 2026 Golden Fork Oy
+
+<br>
+
+Takkatie 7, 00370 Helsinki
+
+<br>
+
+041 326 4717
+
+</footer>
+
+
+
+<script>
+
+let english=false;
+
+function changeLanguage(){
+
+english=!english;
+
+document.getElementById("heroText").innerText =
+english
+?
+"A generous Sri Lankan & Asian inspired lunch buffet – warm, colourful and full of flavour every weekday."
+:
+"Runsas Sri Lankan & Asian inspired lounasbuffet – lämmin, värikäs ja täynnä makua joka arkipäivä.";
+
+
+document.getElementById("buffetIntro").innerText =
+english
+?
+"Golden Fork offers a varied lunch buffet combining Sri Lankan and Asian flavours with popular weekday favourites."
+:
+"Golden Fork tarjoaa monipuolisen lounasbuffetin, jossa Sri Lankan ja Aasian maut yhdistyvät suosittuihin arkilounaan klassikoihin.";
+
+
+document.getElementById("conceptText").innerText =
+english
+?
+"Golden Fork brings a generous lunch buffet to Pitäjänmäki, combining Sri Lankan and Asian flavours with an easy Nordic weekday lunch."
+:
+"Golden Fork tuo Pitäjänmäkeen runsaan lounasbuffetin, jossa Sri Lankan ja Aasian maut kohtaavat pohjoismaisen arkilounaan helppouden.";
+
+}
+
+</script>
+
+</body>
+</html>
